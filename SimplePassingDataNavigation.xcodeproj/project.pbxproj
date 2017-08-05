@@ -14,6 +14,7 @@
 		E11BB8C61F364D2B00D7659F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E11BB8C41F364D2B00D7659F /* LaunchScreen.storyboard */; };
 		E11BB8D11F364D2B00D7659F /* SimplePassingDataNavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BB8D01F364D2B00D7659F /* SimplePassingDataNavigationTests.swift */; };
 		E11BB8DC1F364D2B00D7659F /* SimplePassingDataNavigationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BB8DB1F364D2B00D7659F /* SimplePassingDataNavigationUITests.swift */; };
+		E11BB8EA1F364FDF00D7659F /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E11BB8E91F364FDF00D7659F /* SecondVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		E11BB8D71F364D2B00D7659F /* SimplePassingDataNavigationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimplePassingDataNavigationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E11BB8DB1F364D2B00D7659F /* SimplePassingDataNavigationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimplePassingDataNavigationUITests.swift; sourceTree = "<group>"; };
 		E11BB8DD1F364D2B00D7659F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E11BB8E91F364FDF00D7659F /* SecondVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecondVC.swift; path = ../SecondVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				E11BB8BB1F364D2B00D7659F /* AppDelegate.swift */,
 				E11BB8BD1F364D2B00D7659F /* ViewController.swift */,
+				E11BB8E91F364FDF00D7659F /* SecondVC.swift */,
 				E11BB8BF1F364D2B00D7659F /* Main.storyboard */,
 				E11BB8C21F364D2B00D7659F /* Assets.xcassets */,
 				E11BB8C41F364D2B00D7659F /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E11BB8BE1F364D2B00D7659F /* ViewController.swift in Sources */,
+				E11BB8EA1F364FDF00D7659F /* SecondVC.swift in Sources */,
 				E11BB8BC1F364D2B00D7659F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
