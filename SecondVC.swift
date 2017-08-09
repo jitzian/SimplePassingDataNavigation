@@ -12,6 +12,7 @@ class SecondVC: UIViewController {
 
     @IBOutlet weak var mLabel: UILabel!
     @IBOutlet weak var mImageView: UIImageView!
+    @IBOutlet weak var mButtonUIAlert: UIButton!
     
     var data : String!
     override func viewDidLoad() {
@@ -19,6 +20,9 @@ class SecondVC: UIViewController {
         print("data: \(data!)")
         // Do any additional setup after loading the view.
         mLabel.text = data != nil ? data : "Someting to display"
+        
+//        mButtonUIAlert.isExclusiveTouch = true
+        mButtonUIAlert.isMultipleTouchEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,8 +41,17 @@ class SecondVC: UIViewController {
     }
     */
 
+    static var count : Int = 0
     @IBAction func displayImageFromURL(_ sender: Any) {
-        print("Begin of code")
+        SecondVC.count += 1
+        
+        if (SecondVC.count % 2) == 0 {
+            print(SecondVC.count)
+        }
+        
+//        print("Begin of code: ")
+//        print(SecondVC.count)
+        
         if let checkedUrl = URL(string: "http://www.apple.com/euro/ios/ios8/a/generic/images/og.png") {
             mImageView.contentMode = .scaleAspectFit
             downloadImage(url: checkedUrl)
@@ -64,4 +77,53 @@ class SecondVC: UIViewController {
             }
         }
     }
+    
+    var buttonIsActive = false
+    
+    @IBAction func displayUIAlert(_ sender: Any) {
+        
+        if buttonIsActive == false {
+            buttonIsActive = true
+        
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+                self.buttonIsActive = false
+            }
+            
+            //Creating UIAlertController and
+            //Setting title and message for the alert dialog
+            let alertController = UIAlertController(title: "Enter details?", message: "Enter your name and email", preferredStyle: .alert)
+            
+            //the confirm action taking the inputs
+            let confirmAction = UIAlertAction(title: "Enter", style: .default) { (_) in
+                
+                //getting the input values from user
+                let name = alertController.textFields?[0].text
+                let email = alertController.textFields?[1].text
+                
+                self.mLabel.text = "Name: " + name! + "Email: " + email!
+                
+            }
+            
+            //the cancel action doing nothing
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+            
+            //adding textfields to our dialog box
+            alertController.addTextField { (textField) in
+                textField.placeholder = "Enter Name"
+            }
+            alertController.addTextField { (textField) in
+                textField.placeholder = "Enter Email"
+            }
+            
+            //adding the action to dialogbox
+            alertController.addAction(confirmAction)
+            alertController.addAction(cancelAction)
+            
+            //finally presenting the dialog box
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
+        
+    }
+
 }

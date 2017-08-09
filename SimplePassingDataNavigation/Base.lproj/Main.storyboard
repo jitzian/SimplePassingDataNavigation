@@ -101,13 +101,25 @@
                                 </state>
                                 <connections>
                                     <action selector="displayImageFromURL:" destination="7ob-R7-Rx1" eventType="touchUpInside" id="HxK-AK-hbV"/>
-                                    <action selector="sendData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fVa-jC-dQv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jun-fQ-Kdy">
+                                <rect key="frame" x="16" y="314" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1403227239" green="0.32437401370000002" blue="0.55958549219999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Display UI Alert">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="displayUIAlert:" destination="7ob-R7-Rx1" eventType="touchUpInside" id="2w1-kZ-pJ7"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="mButtonUIAlert" destination="jun-fQ-Kdy" id="t0X-IA-UNn"/>
                         <outlet property="mImageView" destination="Fx7-Fd-KjR" id="knu-r2-Mbp"/>
                         <outlet property="mLabel" destination="S3C-iz-5hV" id="lqp-QN-HT7"/>
                     </connections>
